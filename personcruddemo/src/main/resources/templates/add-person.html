@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Add Person</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+    </head>
+    <body>
+        <div>
+            <h2>New Person</h2>
+            <div>
+                <div>
+                    <form action="#" th:action="@{/addperson}" th:object="${person}" method="post">
+                        <div class="row">
+                            <div >
+                                <label for="firstname">FirstName</label>
+                                <input type="text" th:field="*{firstname}" id="firstname" placeholder="FirstName">
+                                <span th:if="${#fields.hasErrors('firstname')}" th:errors="*{firstname}" ></span>
+                            </div>
+                            <div >
+                                <label for="lastname" class="col-form-label">LastName</label>
+                                <input type="text" th:field="*{lastname}"  id="lastname" placeholder="LastName">
+                                <span th:if="${#fields.hasErrors('lastname')}" th:errors="*{lastname}" ></span>
+                            </div>
+                            <div >
+                                <label for="age" class="col-form-label">Age</label>
+                                <input type="text" th:field="*{age}"  id="age" placeholder="Age">
+                                <span th:if="${#fields.hasErrors('age')}" th:errors="*{age}" ></span>
+                            </div>
+                            <div >
+                                <label for="favouritecolour" class="col-form-label">FavouriteColour</label>
+                                <input type="text" th:field="*{favouritecolour}"  id="favouritecolour" placeholder="FavouriteColour">
+                                <span th:if="${#fields.hasErrors('favouritecolour')}" th:errors="*{favouritecolour}" ></span>
+                            </div>
+                            <div >
+                                <label for="hobby" class="col-form-label">Hobby</label>
+                                <input type="text" th:field="*{hobby}"  id="hobby" placeholder="Hobby">
+                                <span th:if="${#fields.hasErrors('hobby')}" th:errors="*{hobby}" ></span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div >
+                                <input type="submit"  value="Add Person">
+                            </div>
+                        </div>    
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
